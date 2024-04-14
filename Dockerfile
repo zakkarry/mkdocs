@@ -11,4 +11,5 @@ RUN pip3 install --no-cache-dir \
     mkdocs-techdocs-redirects \
     mkdocs-redirects
 
-RUN sed -i 's/strict: true/#strict: true/g' /docs/mkdocs.yml
+COPY entrypoint.sh /opt/entrypoint.sh
+ENTRYPOINT ["/opt/entrypoint.sh"]
