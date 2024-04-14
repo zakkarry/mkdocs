@@ -11,5 +11,6 @@ RUN pip3 install --no-cache-dir \
     mkdocs-techdocs-redirects \
     mkdocs-redirects
 
-COPY entrypoint.sh /opt/entrypoint.sh
-ENTRYPOINT ["/opt/entrypoint.sh"]
+COPY entrypoint.sh /entrypoint.sh
+RUN chmod +x /entrypoint.sh
+ENTRYPOINT ["/bin/sh", "/entrypoint.sh"]
