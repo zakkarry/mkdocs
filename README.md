@@ -16,7 +16,7 @@ version: "2.1"
 services:
   mkdocs:
     container_name: mkdocs
-    image: "ghcr.io/zakkarry/mkdocs:master"
+    image: "ghcr.io/zakkarry/mkdocs:latest"
     ports:
       - "8000:8000/tcp"
     volumes:
@@ -27,13 +27,13 @@ services:
 or simply `docker run`
 
 ```bash
-docker run --rm -it -p 8000:8000 -v /path/to/Guides/repo:/docs ghcr.io/zakkarry/mkdocs:master
+docker run --rm -it -p 8000:8000 -v /path/to/Guides/repo:/docs ghcr.io/zakkarry/mkdocs:latest
 ```
 
 Alternatively, if you are using UnRAID and want to add the container to your dashboard, you can use the following terminal command.
 
 ```bash
-/usr/local/emhttp/plugins/dynamix.docker.manager/scripts/docker create --name='mkdocs' --net='bridge' -e HOST_OS="Unraid" -e HOST_CONTAINERNAME="mkdocs" -l net.unraid.docker.managed=dockerman -l net.unraid.docker.webui='http://[IP]:[PORT:8000]/' -l net.unraid.docker.icon='https://d33wubrfki0l68.cloudfront.net/89531c90d1028bfd3b6e7b6ecf2560adc603e684/e98d6/assets/images/tool-icons/mark-text.png' -p '8000:8000/tcp' -v '/mnt/user/appdata/mkdocs/Guides':'/docs':'rw' 'ghcr.io/zakkarry/mkdocs:master'
+/usr/local/emhttp/plugins/dynamix.docker.manager/scripts/docker create --name='mkdocs' --net='bridge' -e HOST_OS="Unraid" -e HOST_CONTAINERNAME="mkdocs" -l net.unraid.docker.managed=dockerman -l net.unraid.docker.webui='http://[IP]:[PORT:8000]/' -l net.unraid.docker.icon='https://d33wubrfki0l68.cloudfront.net/89531c90d1028bfd3b6e7b6ecf2560adc603e684/e98d6/assets/images/tool-icons/mark-text.png' -p '8000:8000/tcp' -v '/mnt/user/appdata/mkdocs/Guides':'/docs':'rw' 'ghcr.io/zakkarry/mkdocs:latest'
 ```
 
 - Add `--user 99:100` before the "ghcr.io" link if you want to have this run as `nobody`.
