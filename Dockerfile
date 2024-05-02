@@ -9,7 +9,8 @@ RUN pip3 install --no-cache-dir \
     mkdocs-glightbox \
     mkdocs-macros-plugin \
     mkdocs-techdocs-redirects \
-    mkdocs-redirects
+    mkdocs-redirects \
+    neoteroi-mkdocs
 
 COPY entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
